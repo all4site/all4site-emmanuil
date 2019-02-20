@@ -1,32 +1,34 @@
 :php
 	get_header();
-nav.navtop
-	.logo.grid
-		img(src="https://dummyimage.com/100x50.png", alt="")
-	:php
-		wp_nav_menu(array(
-			'menu'						=>	'Главное',
-			'container'				=>	'div',
-			'container_class' =>	'wrapmenu grid',
-			'menu_class'			=>	'menu grid',
-			'menu_id'					=>	'menu'
-		));
-	.social.grid
-		a(href="#!").icon
-			.fas.fa-headphones
-		a(href="#!").icon
-			.fab.fa-youtube
-		a(href="#!").icon
-			.fab.fa-twitter
-		a(href="#!").icon
-			.fab.fa-facebook-f
-		a(href="#!").icon
+nav.navwrapper
+	.wrap
+		.navtop
+			.logo.grid
+				img(src="<?php echo get_template_directory_uri()?>/img/logo.png", alt="")
+			:php
+				wp_nav_menu(array(
+					'menu'						=>	'Главное',
+					'container'				=>	'div',
+					'container_class' =>	'wrapmenu grid',
+					'menu_class'			=>	'menu grid',
+					'menu_id'					=>	'menu'
+				));
+			.socialwrap.grid
+				.social.grid
+					a(href="#!").icon
+						.fas.fa-headphones
+					a(href="#!").icon
+						.fab.fa-youtube
+					a(href="#!").icon
+						.fab.fa-twitter
+					a(href="#!").icon
+						.fab.fa-facebook-f
+					a(href="#!").icon
 			.donate.grid
-	.btn.grid
-		a(href="#!") поддержать
+				.btn.grid
+					a(href="#!") поддержать
 section.contnent
 	.wrap
 		h1 test
-
 :php
 	get_footer();

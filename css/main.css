@@ -149,14 +149,16 @@ a {
   position: relative;
   text-transform: uppercase;
   text-align: center;
-  padding: 10px 30px;
+  padding: 10px 0px;
   justify-self: center;
-  border-radius: 5px;
+  border-radius: 2px;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
   -webkit-transition: background .5s ease;
-  transition: background .5s ease; }
+  transition: background .5s ease;
+  display: grid;
+  grid-template-columns: minmax(100px, 200px); }
   .btn:hover {
     background: #f1676c; }
   .btn a {
@@ -164,30 +166,79 @@ a {
     display: grid;
     align-self: center; }
 
+.navwrapper {
+  background: #f2f2f2;
+  margin-bottom: 100px; }
+
 .navtop {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: -webkit-max-content;
-  grid-auto-columns: max-content;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  min-height: 70px; }
   .navtop .logo {
-    max-width: 100px;
-    min-width: 100px; }
+    grid-template-columns: minmax(150px, 250px);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-right: 50px; }
+  .navtop .wrapmenu {
+    grid-template-columns: minmax(500px, 600px); }
   .navtop .menu {
     grid-auto-flow: column;
     grid-auto-columns: -webkit-max-content;
     grid-auto-columns: max-content;
     -webkit-box-align: stretch;
         -ms-flex-align: stretch;
-            align-items: stretch; }
+            align-items: stretch;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .navtop .menu > li:hover {
+      cursor: pointer; }
+      .navtop .menu > li:hover > a {
+        color: #ED383F;
+        font-weight: bold;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        position: relative; }
+        .navtop .menu > li:hover > a:after {
+          content: "";
+          position: absolute;
+          border-bottom: 1px solid #ED383F;
+          width: 100%;
+          bottom: -10px;
+          left: 0px;
+          opacity: 1; }
+    .navtop .menu > li > a {
+      color: #436C91;
+      font-weight: bold;
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+      position: relative; }
+      .navtop .menu > li > a:after {
+        content: "";
+        position: absolute;
+        border-bottom: 1px solid #ED383F;
+        width: 100%;
+        bottom: -10px;
+        left: 0px;
+        opacity: 0;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease; }
     .navtop .menu li {
-      padding: 0px 20px;
       text-transform: uppercase;
       display: grid;
       -ms-flex-line-pack: center;
-          align-content: center; }
+          align-content: center;
+      position: relative; }
+      .navtop .menu li a {
+        color: #436C91;
+        font-weight: bold;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        position: relative; }
     .navtop .menu ul {
       display: none; }
   .navtop .menu-item-has-children {
@@ -197,26 +248,68 @@ a {
       top: 0; }
   .navtop .sub-menu {
     position: absolute;
-    background: #e6e6e6;
-    top: 100%; }
+    background: #fafafa;
+    top: 100%;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); }
+    .navtop .sub-menu .menu-item-has-children:after {
+      content: "";
+      position: absolute;
+      background: url("../img/right-arrow.png") no-repeat;
+      width: 10px;
+      height: 10px;
+      right: 5px;
+      top: 30%;
+      background-size: cover;
+      background-position: center;
+      -webkit-transform: rotate(-90deg);
+              transform: rotate(-90deg);
+      -webkit-transition: -webkit-transform 0.5s ease;
+      transition: -webkit-transform 0.5s ease;
+      transition: transform 0.5s ease;
+      transition: transform 0.5s ease, -webkit-transform 0.5s ease; }
+    .navtop .sub-menu .menu-item-has-children:hover:after {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg); }
+    .navtop .sub-menu li {
+      border-bottom: 1px solid #cccccc;
+      padding: 0px 40px 0px 10px;
+      font-size: 0.8rem;
+      min-width: 250px;
+      white-space: nowrap; }
+      .navtop .sub-menu li a {
+        padding: 10px 0; }
+      .navtop .sub-menu li a:hover {
+        color: #ED383F; }
+      .navtop .sub-menu li:last-child {
+        border-bottom: none; }
   .navtop .menu-item-has-children:hover > ul {
     display: grid; }
+  .navtop .socialwrap {
+    grid-template-columns: minmax(100px, 150px);
+    margin: 0 50px; }
   .navtop .social {
     grid-auto-flow: column;
     font-size: 1.2rem;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center; }
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
     .navtop .social .icon {
-      padding: 0 10px;
       color: #436C91;
-      -webkit-transition: -webkit-transform .5s ease;
-      transition: -webkit-transform .5s ease;
-      transition: transform .5s ease;
-      transition: transform .5s ease, -webkit-transform .5s ease; }
+      -webkit-transition: -webkit-transform 0.5s ease;
+      transition: -webkit-transform 0.5s ease;
+      transition: transform 0.5s ease;
+      transition: transform 0.5s ease, -webkit-transform 0.5s ease; }
       .navtop .social .icon:hover {
         -webkit-transform: scale(1.1);
                 transform: scale(1.1); }
+  .navtop .btn {
+    -ms-flex-item-align: center;
+        align-self: center;
+    padding: 10px;
+    font-size: 0.8rem; }
 
 .contnent {
   background: gray; }
