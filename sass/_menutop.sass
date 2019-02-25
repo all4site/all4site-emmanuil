@@ -1,20 +1,32 @@
+.navtop-small
+	display: none
+
+.overfolw
+	overflow: hidden
+
 .navwrapper
-	background: lighten($black, 95%)
-	margin-bottom: 100px
+	position: fixed
+	width: 100%
+	top: 0
+	height: 70px
+
+.menuscroll
+	background: $white
+	width: 100%
+	transition: background 0.5s ease
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2)
 
 .navtop
 	display: grid
 	grid-auto-flow: column
 	justify-content: center
-	min-height: 70px
+	grid-template-columns: 1fr 3fr 0.7fr 1fr
+	grid-column-gap: 4%
 
 	.logo
-		grid-template-columns: minmax(150px, 250px)
+		width: 150px
 		align-items: center
-		margin-right: 50px
-
-	.wrapmenu
-		grid-template-columns: minmax(500px, 600px)
+		justify-self: center
 
 	.menu
 		grid-auto-flow: column
@@ -58,7 +70,6 @@
 					transition: all 0.5s ease
 
 		li
-			// padding: 0px 20px
 			text-transform: uppercase
 			display: grid
 			align-content: center
@@ -77,15 +88,11 @@
 		position: relative
 
 		ul > li > ul
-			left: 100%
+			left: 101%
 			top: 0
-
-		// ul
-		// display: block
 
 	.sub-menu
 		position: absolute
-		background: darken($white, 2%)
 		top: 100%
 		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2)
 
@@ -112,6 +119,8 @@
 			font-size: 0.8rem
 			min-width: 250px
 			white-space: nowrap
+			background: darken($white, 2%)
+			width: 100%
 
 			a
 				padding: 10px 0
@@ -125,10 +134,6 @@
 	.menu-item-has-children:hover
 		& > ul
 			display: grid
-
-	.socialwrap
-		grid-template-columns: minmax(100px, 150px)
-		margin: 0 50px
 
 	.social
 		grid-auto-flow: column

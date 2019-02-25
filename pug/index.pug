@@ -4,7 +4,8 @@ nav.navwrapper
 	.wrap
 		.navtop
 			.logo.grid
-				img(src="<?php echo get_template_directory_uri()?>/img/logo.png", alt="")
+				img(src="<?php echo get_template_directory_uri()?>/img/cbn-blue-logo.png", alt="")
+
 			:php
 				wp_nav_menu(array(
 					'menu'						=>	'Главное',
@@ -23,7 +24,36 @@ nav.navwrapper
 						.fab.fa-twitter
 					a(href="#!").icon
 						.fab.fa-facebook-f
+			.donate.grid
+				.btn.grid
+					a(href="#!") поддержать
+		.navtop-small
+			.logo.grid
+				img(src="<?php echo get_template_directory_uri()?>/img/cbn-blue-logo.png", alt="")
+			.cross
+				.hamburger.hamburger--slider
+					.hamburger-box
+						.hamburger-inner
+	.nav-top-hide
+		.navtop-small-inside
+			:php
+				wp_nav_menu(array(
+					'menu'						=>	'Главное',
+					'container'				=>	'div',
+					'container_class' =>	'wrapmenu grid',
+					'menu_class'			=>	'menu grid',
+					'menu_id'					=>	'menu',
+				));
+			.socialwrap.grid
+				.social.grid
 					a(href="#!").icon
+						.fas.fa-headphones
+					a(href="#!").icon
+						.fab.fa-youtube
+					a(href="#!").icon
+						.fab.fa-twitter
+					a(href="#!").icon
+						.fab.fa-facebook-f
 			.donate.grid
 				.btn.grid
 					a(href="#!") поддержать

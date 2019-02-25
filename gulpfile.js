@@ -52,7 +52,8 @@ gulp.task('default', ['sass', 'pug', 'browser-sync'], function () {
 	gulp.watch('sass/*.sass', ['sass']);
 	gulp.watch('pug/*.pug', ['pug']);
 	gulp.watch('css/*.css', browserSync.reload);
-	gulp.watch('*.php', browserSync.reload);
+	gulp.watch('**/*.php', browserSync.reload);
+	gulp.watch('js/*.js', browserSync.reload);
 
 });
 
