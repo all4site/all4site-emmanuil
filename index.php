@@ -54,6 +54,31 @@
 </nav>
 <section class="contnent">
   <div class="wrap">
-    <h1>test</h1>
+    <div class="content-inner">
+      <h2>главные новости</h2>
+      <div class="content-article"><?php $currentPage = get_query_var('paged');
+$postperpage = 9;
+
+$the_query = new WP_Query(array(
+		'post_type'      					=> 'post',
+		'posts_per_page' 					=> $postperpage,
+		'paged'          					=> $currentPage,
+		//- 'cat'											=> array('-2, -8')
+
+));
+while ($the_query->have_posts()): $the_query->the_post();
+if( has_post_thumbnail() ) {}
+else echo 'НЭТЕ КАРТЫНКЫ'?>
+        <div class="content-article-inner"><?php ?>
+          <div class="img"><a href="<?php the_permalink();?>"><?php the_post_thumbnail();?></a></div><a href="<?php the_permalink();?>"><span><?php $theTitle = esc_html (get_the_title());
+echo wp_trim_words($theTitle, 10, '...');
+?></span></a>
+        </div><?php wp_reset_postdata();
+endwhile;?>
+      </div>
+      <div class="pagination">
+        <h1>test</h1>
+      </div>
+    </div>
   </div>
 </section><?php get_footer();?>

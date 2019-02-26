@@ -4,9 +4,10 @@
 	$(document).ready(function () {
 		var posreload = $('.navwrapper').offset().top;
 		var wh = $(window).width();
+		console.log(posreload);
 
 		if (posreload >= 50) {
-			$('.menuscroll').addClass('menuscroll');
+			$('.navwrapper').addClass('menuscroll');
 		}
 		jQuery(document).scroll(function () {
 			var pos = $(this).scrollTop();

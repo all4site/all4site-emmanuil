@@ -1,4 +1,41 @@
 .contnent
-	background: lighten($black, 50%)
-	height: 3000px
-	margin-top: 70px
+	margin: 70px
+
+	.content-inner
+		h2
+			text-transform: uppercase
+			margin: 20px 0
+
+	.content-article
+		display: grid
+		grid-template-columns: repeat(3, minmax(200px, 1fr))
+		grid-gap: 20px
+
+		.content-article-inner
+			display: grid
+			grid-template-rows: 1fr min-content
+
+			.img
+				display: grid
+
+				img
+					display: grid
+
+				a
+					position: relative
+					&:after
+						content: ""
+						position: absolute
+						width: 100%
+						height: 100%
+						background: fade-out($black, 0.8)
+						z-index: 9999
+						top: 0
+						left: 0
+						transition: background .5s ease
+
+					&:hover:after
+						background: fade-out($black, 1)
+
+			span
+				font-size: 1.2rem
