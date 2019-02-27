@@ -4,7 +4,6 @@
 	$(document).ready(function () {
 		var posreload = $('.navwrapper').offset().top;
 		var wh = $(window).width();
-		console.log(posreload);
 
 		if (posreload >= 50) {
 			$('.navwrapper').addClass('menuscroll');

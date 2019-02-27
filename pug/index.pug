@@ -1,4 +1,7 @@
 :php
+	echo $_POST['wh'];
+
+:php
 	get_header();
 nav.navwrapper
 	.wrap
@@ -63,21 +66,28 @@ section.contnent
 			h2 главные новости
 			.content-article
 				:php
+					if($x == 1){
+						$p = 9;
+					}
+					if($x == 2){
+						$p = 6;
+					}
+					if($x == 3){
+						$p = 3;
+					}
 					$currentPage = get_query_var('paged');
-					$postperpage = 9;
-
-					$the_query = new WP_Query(array(
+					//- $postperpage = $p;
+					$wp_query = new WP_Query(array(
 							'post_type'      					=> 'post',
-							'posts_per_page' 					=> $postperpage,
+							'posts_per_page' 					=> $p,
 							'paged'          					=> $currentPage,
 							//- 'cat'											=> array('-2, -8')
 
 					));
-					while ($the_query->have_posts()): $the_query->the_post();
-					if( has_post_thumbnail() ) {}
-					else echo 'НЭТЕ КАРТЫНКЫ'
+					while ($wp_query->have_posts()): $wp_query->the_post();
+					if( has_post_thumbnail() ) {
+
 				.content-article-inner
-					:php
 					.img
 						a(href="<?php the_permalink();?>")
 							:php
@@ -86,12 +96,28 @@ section.contnent
 						span
 							:php
 								$theTitle = esc_html (get_the_title());
-								echo wp_trim_words($theTitle, 10, '...');
-
+								echo wp_trim_words($theTitle, 6, '...');
+				:php
+					}
+					else{
+				.content-article-inner
+					:php
+						echo '<img src="'.get_template_directory_uri().'/img/noImg.png" />';
+					a(href="<?php the_permalink();?>")
+						span
+							:php
+								$theTitle = esc_html (get_the_title());
+								echo wp_trim_words($theTitle, 6, '...');
+				:php
+					}
 				:php
 					wp_reset_postdata();
 					endwhile;
+
+
 			.pagination
-				h1 test
+				.pagination-inner
+					:php
+						all4site_pagination();
 :php
 	get_footer();
