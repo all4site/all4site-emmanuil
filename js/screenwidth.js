@@ -1,22 +1,15 @@
-(function ($) {
+jQuery(document).ready(function ($) {
 
-	$(document).ready(function () {
-		var wh = $(window).width();
-		console.log(wh);
+	if ($(window).width() <= '1280') {
 
-		$.ajax({
-			type: "POST",
-			url: "/wp-content/themes/all4site/index.php",
-			data: wh,
+		var data = {
+			action: 'afswh',
+			name: 'dfdfd'
+		};
 
-			success: function (data) {
-					console.log(data);
-				},
-				error: function () {
-				console.log("No PHP script: ");
-			}
+		jQuery.post(screenjs.ajaxurl, data, function (response) {
+			$('.content-article').html(response);
 		});
-		return false;
-	});
+	}
 
-})(jQuery);
+});

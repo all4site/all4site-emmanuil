@@ -1,5 +1,4 @@
-<?php echo $_POST['wh'];
-?><?php get_header();?>
+<?php get_header();?>
 <nav class="navwrapper">
   <div class="wrap">
     <div class="navtop">
@@ -57,24 +56,17 @@
   <div class="wrap">
     <div class="content-inner">
       <h2>главные новости</h2>
-      <div class="content-article"><?php if($x == 1){
-	$p = 9;
-}
-if($x == 2){
-	$p = 6;
-}
-if($x == 3){
-	$p = 3;
-}
-$currentPage = get_query_var('paged');
-//- $postperpage = $p;
-$wp_query = new WP_Query(array(
-		'post_type'      					=> 'post',
-		'posts_per_page' 					=> $p,
-		'paged'          					=> $currentPage,
-		//- 'cat'											=> array('-2, -8')
+			<div class="content-article">
+			<?php
+			$currentPage = get_query_var('paged');
+			$postperpage = 9;
+			$wp_query = new WP_Query(array(
+					'post_type'      					=> 'post',
+					'posts_per_page' 					=> $postperpage,
+					'paged'          					=> $currentPage,
+					//- 'cat'											=> array('-2, -8')
 
-));
+			));
 while ($wp_query->have_posts()): $wp_query->the_post();
 if( has_post_thumbnail() ) {
 ?>

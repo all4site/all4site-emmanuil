@@ -1,7 +1,4 @@
 :php
-	echo $_POST['wh'];
-
-:php
 	get_header();
 nav.navwrapper
 	.wrap
@@ -66,20 +63,11 @@ section.contnent
 			h2 главные новости
 			.content-article
 				:php
-					if($x == 1){
-						$p = 9;
-					}
-					if($x == 2){
-						$p = 6;
-					}
-					if($x == 3){
-						$p = 3;
-					}
 					$currentPage = get_query_var('paged');
-					//- $postperpage = $p;
+					$postperpage = 9;
 					$wp_query = new WP_Query(array(
 							'post_type'      					=> 'post',
-							'posts_per_page' 					=> $p,
+							'posts_per_page' 					=> $postperpage,
 							'paged'          					=> $currentPage,
 							//- 'cat'											=> array('-2, -8')
 
