@@ -1,6 +1,17 @@
 //  Large Devices, Wide Screens
-// @media only screen and (max-width: 1200px)
-// //
+@media only screen and (max-width: 1200px)
+	.wh-1920
+		display: none !important
+
+	.wh-1280
+		display: grid !important
+
+	.contnent .content-article
+		grid-template-columns: repeat(2, minmax(200px, 1fr))
+		grid-column-gap: 20px
+		grid-row-gap: 0
+
+
 //  Medium Devices, Desktops
 @media only screen and (max-width: 992px)
 	.navtop
@@ -8,6 +19,17 @@
 
 	.navtop-small
 		display: grid
+
+	.contnent .content-article
+		grid-template-columns: repeat(1, minmax(200px, 1fr))
+		grid-gap: 20px
+
+		.content-article-inner
+			text-align: center
+
+			.text
+				display: grid
+				align-self: center
 
 //  Small Devices, Tablets
 //@media only screen and (max-width: 768px)
@@ -17,6 +39,7 @@
 @media only screen and (max-width: 480px)
 	.navtop-small
 		grid-template-columns: 2fr 1fr
+
 		.cross
 			margin-right: 0
 			justify-self: center
@@ -26,11 +49,14 @@
 		grid-row-gap: 20px
 		max-height: 468px
 		overflow: scroll
+
 		.btn
 			grid-template-columns: minmax(100px, 150px)
 			padding: 5px 0
+
 		.menu
 			font-size: 1rem
+
 //  Custom, iPhone Retina
 //@media only screen and (max-width: 320px)
 // //

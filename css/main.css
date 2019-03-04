@@ -179,7 +179,8 @@ a {
           justify-content: center; }
   .pagination .pagination-inner {
     display: grid;
-    grid-auto-flow: column; }
+    grid-auto-flow: column;
+    justify-items: center; }
   .pagination .next,
   .pagination .prev {
     display: grid;
@@ -196,7 +197,8 @@ a {
   position: fixed;
   width: 100%;
   top: 0;
-  height: 70px; }
+  height: 70px;
+  z-index: 9999999; }
 
 .menuscroll {
   background: #fff;
@@ -438,6 +440,9 @@ a {
     .navtop-small-inside .menu ul {
       display: none; }
 
+.wh-1280 {
+  display: none !important; }
+
 .contnent {
   margin: 70px; }
   .contnent .content-inner h2 {
@@ -449,8 +454,8 @@ a {
     grid-gap: 20px; }
     .contnent .content-article .content-article-inner {
       display: grid;
-      grid-template-rows: minmax(250px, -webkit-max-content) -webkit-min-content;
-      grid-template-rows: minmax(250px, max-content) min-content; }
+      grid-template-rows: auto minmax(65px, -webkit-min-content);
+      grid-template-rows: auto minmax(65px, min-content); }
       .contnent .content-article .content-article-inner .img {
         display: grid; }
         .contnent .content-article .content-article-inner .img img {
@@ -474,11 +479,29 @@ a {
         font-size: 1.2rem;
         color: #000; }
 
+@media only screen and (max-width: 1200px) {
+  .wh-1920 {
+    display: none !important; }
+  .wh-1280 {
+    display: grid !important; }
+  .contnent .content-article {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-column-gap: 20px;
+    grid-row-gap: 0; } }
+
 @media only screen and (max-width: 992px) {
   .navtop {
     display: none; }
   .navtop-small {
-    display: grid; } }
+    display: grid; }
+  .contnent .content-article {
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+    grid-gap: 20px; }
+    .contnent .content-article .content-article-inner {
+      text-align: center; }
+      .contnent .content-article .content-article-inner .text {
+        display: grid;
+        align-self: center; } }
 
 @media only screen and (max-width: 480px) {
   .navtop-small {

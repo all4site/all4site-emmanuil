@@ -24,23 +24,23 @@ gulp.task('sass', function () {
 		.pipe(gulp.dest('css/'))
 });
 
-gulp.task('pug', function () {
-	gulp.src(['pug/*.pug', '!pug/_*.pug'])
-		.pipe(pugphp({
-			pretty: true,
-			filters: {
-				php: filter
-			}
-					}))
-		.on('error', notify.onError({
-			message: "<%= error.message %>",
-			title: "Jade Error!"
-		}))
-		.pipe(rename(function (path) {
-			path.extname = ".php"
-		}))
-		.pipe(gulp.dest('.'))
-});
+// gulp.task('pug', function () {
+// 	gulp.src(['pug/*.pug', '!pug/_*.pug'])
+// 		.pipe(pugphp({
+// 			pretty: true,
+// 			filters: {
+// 				php: filter
+// 			}
+// 					}))
+// 		.on('error', notify.onError({
+// 			message: "<%= error.message %>",
+// 			title: "Jade Error!"
+// 		}))
+// 		.pipe(rename(function (path) {
+// 			path.extname = ".php"
+// 		}))
+// 		.pipe(gulp.dest('.'))
+// });
 
 gulp.task('browser-sync', function () {
 	browserSync({
@@ -48,9 +48,9 @@ gulp.task('browser-sync', function () {
 		notify: false
 	});
 });
-gulp.task('default', ['sass', 'pug', 'browser-sync'], function () {
+gulp.task('default', ['sass', 'browser-sync'], function () {
 	gulp.watch('sass/*.sass', ['sass']);
-	gulp.watch('pug/*.pug', ['pug']);
+	// gulp.watch('pug/*.pug', ['pug']);
 	gulp.watch('css/*.css', browserSync.reload);
 	gulp.watch('**/*.php', browserSync.reload);
 	gulp.watch('js/*.js', browserSync.reload);
