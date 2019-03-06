@@ -25,11 +25,13 @@
 				</div>
 			<?php } else{?>
 				<div class="content-article-inner">
-					<?php echo '<img src="'.get_template_directory_uri().'/img/noImg.png" />';?>
-						<a class='text' href="<?php the_permalink();?>">
-							<span><?php $theTitle = esc_html (get_the_title());echo wp_trim_words($theTitle, 6, '...');?>
-							</span>
-						</a>
+					<div class="img">
+						<?php echo '<img src="'.get_template_directory_uri().'/img/noImg.png" />';?>
+					</div>
+					<a class='text' href="<?php the_permalink();?>">
+						<span><?php $theTitle = esc_html (get_the_title());echo wp_trim_words($theTitle, 6, '...');?>
+						</span>
+					</a>
 				</div>
 		<?php } wp_reset_postdata(); endwhile; ?>
 </div>

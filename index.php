@@ -3,8 +3,7 @@
 <?php  include 'template_parts/menu.php';?>
 
 <!-- START CONTENT -->
-	<section class="contnent">
-		<div class="wrap">
+	<section class="contnent wrap">
 			<div class="content-inner">
 				<h2>главные новости</h2>
 	<?php include 'template_parts/content_1920.php'; ?>
@@ -15,7 +14,9 @@
 				</div>
 		<!-- END PAGINATION -->
 			</div>
-		</div>
+	<!-- STRT ASIDE -->
+	<?php include 'template_parts/aside.php'; ?>
+		<!-- END ASIDE -->
 	</section>
 <!-- END CONTENT -->
 

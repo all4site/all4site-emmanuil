@@ -18,7 +18,7 @@ function afs_screenwh_function()
 						$wp_query = new WP_Query(array(
 							'post_type'      					=> 'post',
 							'posts_per_page' 					=> $postperpage,
-							'paged'          					=> $currentPage,
+							'paged'          					=> 4,
 							//- 'cat'											=> array('-2, -8')
 						));
 						while ($wp_query->have_posts()): $wp_query->the_post();
@@ -47,7 +47,9 @@ function afs_screenwh_function()
 				</div>
 	<!-- START PAGINATION -->
 				<div class="pagination">
-					<div class="pagination-inner"><?php all4site_pagination();?></div>
+					<div class="pagination-inner">
+					<?php all4site_pagination();?>
+					</div>
 				</div>
 	<!-- END PAGINATION -->
 			</div>
