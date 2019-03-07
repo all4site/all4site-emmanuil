@@ -1,9 +1,9 @@
 <!-- START CONTENT 1920 -->
-<div class="content-article wh-1920">
+<div class="content-article wh-992">
 
 	<?php
 		$currentPage = get_query_var('paged');
-		$postperpage = 9;
+		$postperpage = 4;
 		$wp_query = new WP_Query(array(
 			'post_type'      					=> 'post',
 			'posts_per_page' 					=> $postperpage,

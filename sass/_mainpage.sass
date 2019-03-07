@@ -1,21 +1,25 @@
 .wh-1280
 	display: none !important
+.wh-992
+	display: none !important
 
 .contnent
 	margin-top: 70px
 	display: grid
-	grid-template-columns: 4fr 1fr
+	grid-template-columns: 3fr 1fr
 	grid-column-gap: 20px
+	grid-template-rows: min-content min-content
 
 	.content-inner
 		h2
 			text-transform: uppercase
 			margin: 20px 0
+			grid-row: span 1
 
 	.content-article
 		display: grid
 		grid-template-columns: repeat(3, minmax(200px, 1fr))
-		grid-gap: 20px
+		grid-column-gap: 10px
 
 		.content-article-inner
 			display: grid
@@ -47,9 +51,12 @@
 						background: fade-out($black, 1)
 
 			span
-				font-size: 1.2rem
+				font-size: 1rem
 				color: $black
+
 .aside
+	grid-row: span 2
+
 	h4
 		background: lighten($black, 90%)
 		padding: 10px
@@ -57,20 +64,90 @@
 		text-align: center
 		color: $black
 		margin: 20px 0
+
 	.categiry-inner
 		display: grid
 		grid-template-columns: 1fr 30px
 		grid-auto-rows: 30px
 		padding: 0 15px
 		grid-row-gap: 5px
+
 		span
 			display: grid
+
 		a:hover
 			color: $red
+
 		.count
 			background: lighten($blue, 20%)
 			border-radius: 100%
-			font-size: .7rem
+			font-size: 0.7rem
 			text-align: center
 			line-height: 30px
 			color: $white
+
+	.categiry-inner-popular
+		display: grid
+		grid-template-columns: 1fr 2fr
+		grid-gap: 5px
+		align-items: center
+		padding: 0 15px
+
+		.img-thumb
+			a
+				display: grid
+
+	.categiry-inner-recommend
+		display: grid
+		padding: 0 15px
+		grid-row-gap: 10px
+
+.content-bottom
+	display: grid
+	grid-auto-flow: column
+	grid-auto-columns: 1fr
+	grid-column-gap: 10px
+	margin-top: 50px
+
+	h4
+		margin-bottom: 20px
+
+	.content-bottom-img
+		display: grid
+		grid-row-gap: 10px
+
+		.img
+			margin-bottom: 20px
+
+	.content-bottom-txt
+		margin: 10px 0
+		padding: 10px 0
+		border-top: 1px solid lighten($black, 80%)
+
+.volonter
+	background: url("../img/Gruppa-2-1280x305.jpg")
+	display: grid
+	grid-template-columns: repeat(2, max-content)
+	justify-content: center
+	justify-items: center
+	margin-top: 20px
+
+	h2
+		color: $white
+		text-align: center
+		padding: 50px
+		grid-column: span 2
+
+	.btn
+		background: fade-out($white, 1)
+		box-shadow: none
+		border: 1px solid $white
+		text-transform: inherit
+		color: $white
+		padding: 15px
+		grid-column: span 1
+		margin-bottom: 50px
+		width: 200px
+
+		&:hover
+			background: fade-out($white, .9)
