@@ -1,0 +1,63 @@
+//  Large Devices, Wide Screens
+@media only screen and (max-width: 1200px)
+	.contnent .content-article
+		grid-template-columns: repeat(2, minmax(200px, 1fr))
+		grid-column-gap: 20px
+		grid-row-gap: 0
+
+	.content-bottom
+		grid-column: span 2
+
+//  Medium Devices, Desktops
+@media only screen and (max-width: 992px)
+	.contnent
+		grid-template-columns: 1fr
+
+		.content-article
+			grid-template-columns: repeat(1, minmax(200px, 1fr))
+			grid-gap: 20px
+
+		.content-article-inner
+			text-align: center
+
+			.text
+				display: grid
+				align-self: center
+
+				span
+					font-size: 1.6rem
+
+	.content-bottom
+		grid-column: span 1
+
+	.aside
+		grid-row: 1
+
+		& > div:not(:first-child)
+			border-top: 1px solid $blue
+
+		h4
+			margin: 0
+			cursor: pointer
+			background: fade-out($blue, 0.5)
+			color: $white
+
+			&:hover
+				background: fade-out($blue, 0.6)
+
+		.categiry-inner-popular
+			grid-row-gap: 10px
+			padding: 15px
+
+
+//  Small Devices, Tablets
+@media only screen and (max-width: 768px)
+	.content-bottom
+		display: none
+
+//  Extra Small Devices, Phones
+// @media only screen and (max-width: 480px)
+//
+//  Custom, iPhone Retina
+//@media only screen and (max-width: 320px)
+// //

@@ -101,4 +101,13 @@
 		}
 	});
 	//End Accordeon Category
+// Start Paralax
+	$(window).scroll(function () {
+		var st = $(this).scrollTop();
+		$('.singlepage_thumbnaul__title h2').css({
+			"transform": "translate(0%, "+ st +"%"
+		})
+	});
+// End Paralax
+
 })(jQuery);

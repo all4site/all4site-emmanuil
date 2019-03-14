@@ -24,12 +24,15 @@
 	</div>
 	<section class="volonter">
 		<h2>Поддержать деятельность Ассоциации «Еммануил»</h2>
-		<a href="#!">
-			<button class="btn-donate btn">Помочь финансово</button>
-		</a>
-		<a href="#!">
-			<button class="btn-volonter btn">Волонтерство</button>
-		</a>
+		<div class="volonter_btn">
+			<a href="#!">
+				<button class="btn-donate btn">Помочь финансово</button>
+			</a>
+			<a href="#!">
+				<button class="btn-volonter btn">Волонтерство</button>
+			</a>
+
+		</div>
 	</section>
 <!-- END CONTENT -->
 

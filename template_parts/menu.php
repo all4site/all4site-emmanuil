@@ -4,7 +4,9 @@
 	<!-- START BIG NAVIGATION -->
 			<div class="navtop">
 				<div class="logo grid">
+					<a href="<?php echo home_url();?>">
 					<img src="<?php echo get_template_directory_uri()?>/img/cbn-blue-logo.png" alt=""/>
+					</a>
 				</div>
 
 			<?php wp_nav_menu(array(

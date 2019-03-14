@@ -4,7 +4,7 @@
 	display: none !important
 
 .contnent
-	margin-top: 70px
+	padding: 70px 0 20px
 	display: grid
 	grid-template-columns: 3fr 1fr
 	grid-column-gap: 20px
@@ -127,16 +127,18 @@
 .volonter
 	background: url("../img/Gruppa-2-1280x305.jpg")
 	display: grid
-	grid-template-columns: repeat(2, max-content)
-	justify-content: center
-	justify-items: center
-	margin-top: 20px
+	padding: 50px 0
+	grid-row-gap: 30px
 
 	h2
 		color: $white
 		text-align: center
-		padding: 50px
-		grid-column: span 2
+.volonter_btn
+	display: grid
+	grid-auto-flow: column
+	grid-auto-columns: minmax(310px, 400px)
+	justify-content: center
+	justify-items: center
 
 	.btn
 		background: fade-out($white, 1)
@@ -145,8 +147,6 @@
 		text-transform: inherit
 		color: $white
 		padding: 15px
-		grid-column: span 1
-		margin-bottom: 50px
 		width: 200px
 
 		&:hover
